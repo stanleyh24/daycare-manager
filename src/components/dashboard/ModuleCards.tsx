@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -47,7 +48,7 @@ const ModuleCard = ({
       </CardContent>
       <CardFooter>
         <Button variant="outline" className="w-full" asChild>
-          <a href={href}>Access Module</a>
+          <Link to={href}>Access Module</Link>
         </Button>
       </CardFooter>
     </Card>

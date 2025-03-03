@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import {
   Home,
@@ -21,6 +21,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({ className, collapsed = false }: SidebarProps) => {
+  const location = useLocation();
   const modules = [
     {
       name: "Dashboard",
@@ -91,6 +92,7 @@ const Sidebar = ({ className, collapsed = false }: SidebarProps) => {
                 "flex items-center px-3 py-3 text-sm font-medium rounded-md hover:bg-slate-800 transition-colors",
                 "focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-slate-900",
                 collapsed ? "justify-center" : "justify-start",
+                location.pathname === module.path ? "bg-slate-800" : "",
               )}
             >
               {module.icon}
